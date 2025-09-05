@@ -1,5 +1,6 @@
 import Login from "../pages/LoginPage";
 import Dashboard from "../pages/DashboardPage";
+import Sharing from "../pages/SharingPage";
 
 export const ROUTES = [
   {
@@ -11,6 +12,11 @@ export const ROUTES = [
     path: "/dashboard",
     element: <Dashboard />,
     label: "Dashboard",
+  },
+  {
+    path: "/sharing",
+    element: <Sharing />,
+    label: "Sharing", 
   },
 ];
 
