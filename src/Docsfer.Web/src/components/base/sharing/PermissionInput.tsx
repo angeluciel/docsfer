@@ -6,7 +6,7 @@ return(
       <div className="w-full max-w-md space-y-3">
         <label htmlFor="fileName"
         className="block text-[20px] font-semibold text-[#243D5A]">
-            Nome do arquivo
+            Permissões
         </label>
       <input type="text" 
       id="fileName" 
