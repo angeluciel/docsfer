@@ -1,8 +1,9 @@
-import FileNameInput from "../components/base/sharing/FileNameInput";
+import FileNameInput from "@components/base/sharing/FileNameInput";
 
 export default function SharingPage() {
-  
-  
-  <FileNameInput/>
-
+  return (
+    <div className="p-6">
+      <FileNameInput />
+    </div>
+  );
 }
