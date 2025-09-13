@@ -1,5 +1,6 @@
-import React from "react";
+import { type ButtonHTMLAttributes, type ReactNode } from "react";
 import { LayoutGrid } from "lucide-react";
+import clsx from "clsx";
 
 type Variant = "full" | "border";
 type IconSide = "left" | "right";
@@ -10,15 +11,15 @@ const VARIANTS: Record<Variant, string> = {
     "border-2 border-btn-200 text-btn-200 bg-transparent hover:bg-btn-200/10 active:bg-btn-200/20",
 };
 
-type BaseButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
+type BaseButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
   variant?: Variant;
-  icon?: React.ReactNode | string;
+  icon?: ReactNode | string;
   showIcon?: boolean;
   iconPosition?: IconSide;
   className?: string;
 };
 
-const BaseButton: React.FC<BaseButtonProps> = ({
+export const BaseButton = ({
   type = "button",
   children,
   variant = "full",
@@ -27,7 +28,7 @@ const BaseButton: React.FC<BaseButtonProps> = ({
   iconPosition = "left",
   className = "",
   ...rest // extra props like onClick, disabled
-}) => {
+}: BaseButtonProps) => {
   const variantClasses = VARIANTS[variant] ?? VARIANTS.full;
 
   const renderIcon = () => {
@@ -43,7 +44,11 @@ const BaseButton: React.FC<BaseButtonProps> = ({
   return (
     <button
       type={type}
-      className={`inline-flex items-center transition-all duration-300 justify-center w-full rounded-sm font-semibold gap-2 h-default p-3 ${variantClasses} ${className}`}
+      className={clsx(
+        "inline-flex items-center transition-all duration-300 justify-center w-full rounded-sm font-semibold gap-2 h-default p-3",
+        variantClasses,
+        className
+      )}
       {...rest}
     >
       {iconPosition === "left" && renderIcon()}
@@ -52,5 +57,3 @@ const BaseButton: React.FC<BaseButtonProps> = ({
     </button>
   );
 };
-
-export default BaseButton;

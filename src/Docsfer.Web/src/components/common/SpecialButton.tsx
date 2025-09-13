@@ -1,6 +1,4 @@
-import React from "react";
-
-const newButton = () => {
+export const SpecialButton = () => {
   return (
     <div className="h-1/3 w-full flex justify-center items-center bg-btn-200 ">
       <button
@@ -18,5 +16,3 @@ const newButton = () => {
     </div>
   );
 };
-
-export default newButton;

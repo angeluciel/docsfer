@@ -1,14 +1,14 @@
-import { RouterProvider } from "react-router-dom";
-
-import { router } from "./router/router";
+import { RouterProvider } from "react-router";
+import { ToastProvider } from "@hooks/useToast";
+import { router } from "./router/route";
 
 function App() {
   return (
-    <>
-      <div className="App">
+    <div className="App">
+      <ToastProvider>
         <RouterProvider router={router} />
-      </div>
-    </>
+      </ToastProvider>
+    </div>
   );
 }
 

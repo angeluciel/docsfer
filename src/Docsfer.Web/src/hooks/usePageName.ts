@@ -1,4 +1,4 @@
-import { useLocation } from "react-router-dom";
+import { useLocation } from "react-router";
 
 const usePageName = () => {
   const location = useLocation();
@@ -6,10 +6,8 @@ const usePageName = () => {
   // Custom mapping for specific routes
   const routeNameMap: Record<string, string> = {
     "/dashboard": "Dashboard",
-    "/group/filesSent": "Files Sent",
-    "/group/filesReceived": "Files Received",
-    "/profile": "Profile",
-    "/settings": "Settings",
+    "/files": "Todos Arquivos",
+    "/groups": "Grupos",
   };
 
   // Function to get page name from pathname
